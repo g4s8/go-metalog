@@ -11,7 +11,7 @@ package metalog
 // Logger interface for structured loggers
 type Logger interface {
 	// Log message with fields
-	Log(lvl Level, msg string, fiels... Field)
+	Log(lvl Level, msg string, fields... Field)
 }
 
 // Level of logging
@@ -29,7 +29,7 @@ const (
 	// ErrorLevel indicates that some error happens,
 	// it doesn't stop the program
 	ErrorLevel
-	// PanicLevel is the highest level, it log error
+	// PanicLevel is the highest level, it logs error
 	// message and exits program with panic
 	PanicLevel
 )
