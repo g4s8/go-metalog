@@ -23,7 +23,7 @@ logging as `metalog.Logger` interface:
 // Logger interface for structured loggers
 type Logger interface {
 	// Log message with fields
-	Log(lvl Level, msg string, fiels... Field)
+	Log(lvl Level, msg string, fields... Field)
 }
 ```
 It's minimal interface that could be used as API for any
@@ -75,9 +75,11 @@ Application decides which logger implementation it's using,
 then it wraps logger instance with one of metalog adapters,
 and passes it to library method:
 ```go
-"example.com/lib"
-metalogrus "github.com/g4s8/go-metalog/adapters/logrus"
-"github.com/sirupsen/logrus"
+import (
+   "example.com/lib"
+   metalogrus "github.com/g4s8/go-metalog/adapters/logrus"
+   "github.com/sirupsen/logrus"
+)
 
 func main() {
 	log := logrus.New()
